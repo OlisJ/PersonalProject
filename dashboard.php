@@ -34,11 +34,11 @@
 
 		include_once('config.php');
 
-		$getUsers = $conn->prepare("SELECT * FROM customer");
+		$getCust = $pdo->prepare("SELECT * FROM customer");
 
-		$getUsers->execute();
+		$getCust->execute();
 
-		$users = $getUsers->fetchAll();
+		$users = $getCust->fetchAll();
 
 	 ?>
 
@@ -69,12 +69,11 @@
 				<td> <?= "<a href='delete.php?id=$user[id]'> Delete</a>| <a href='edit.php?id=$user[id]'> Update </a>"?></td>
 
 			</tr>
+	<?php
+		}
+	?>
 		
-		<?php 
-
-			}
-
-	 	 ?>
+	
 
 
 	 </table>

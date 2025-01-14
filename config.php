@@ -1,6 +1,6 @@
 <?php
 $host='localhost';
-$dbname='hotel';
+$dbname='db3';
 $user='root';
 $pass='';
 

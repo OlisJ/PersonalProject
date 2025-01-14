@@ -1,0 +1,11 @@
+.homediv{
+    background-image: url(img/furniture.jpg);
+    background-repeat:round;
+    background-size:contain;
+    height: 100vh;
+    z-index: 2;
+}
+
+*{
+    margin: 0;
+}
