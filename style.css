@@ -3,9 +3,56 @@
     background-repeat:round;
     background-size:contain;
     height: 100vh;
-    z-index: 2;
+    position: relative;
 }
 
 *{
     margin: 0;
+    scroll-behavior: smooth;
+    font-family: "Montserrat", serif;
+}
+
+.txt{
+    position: absolute;
+    left: 50%;
+    background-color:#cea660;
+    height: 100vh;
+    width: 840px;
+    padding-top: 40vh;
+    padding-left: 120px;
+    padding-right: 70px;
+    font-size: 70px;
+    font-weight: 500;
+    color: white;
+}
+
+.pt2{
+    height: 100vh;
+    background-color: #E8E4C9;
+    position: relative;
+}
+
+.icon{
+    margin-top: 100px;
+    margin-left: 200px;
+}
+
+#pt2txt{
+    margin-left:210px;
+    margin-top: 5px;
+}
+
+#pt2p{
+    width: 650px;
+    margin-left: 50px;
+    font-size: 30px;
+    font-weight: 400;
+    margin-top: 40px;
+}
+
+#pt2img{
+    position: absolute;
+    top: 15%;
+    left: 55%;
+    border: 3px solid lightslategrey;
 }
