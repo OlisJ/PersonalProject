@@ -3,29 +3,8 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Document</title>
-
-	<style>
-		
-		table
-		{
-			border: 1px solid black;
-		}
-
-		tr,td,th
-		{
-			border: 1px solid black;
-			
-		}
-		table,tr,td
-		{
-			border-collapse: collapse;
-		}
-		td
-		{
-			padding: 10px;
-		}
-
-	</style>
+	<link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css'>
+	
 </head>
 <body>
 
@@ -41,9 +20,37 @@
 		$users = $getCust->fetchAll();
 
 	 ?>
+	   <nav class="navbar fixed-top" style="background-color: #87CEEB;">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">LuxuriousLodge Resort</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="offcanvas offcanvas-end" style="background-color: #87CEEB;" tabindex="-1" id="offcanvasDarkNavbar" aria-labelledby="offcanvasDarkNavbarLabel">
+            <div class="offcanvas-header">
+              <h5 class="offcanvas-title" id="offcanvasDarkNavbarLabel">LuxuriousLodge Resort</h5>
+              <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body">
+              <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                <li class="nav-item">
+                  <a class="nav-link active" aria-current="page" href='index.html'>Home</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link active" href="#">Customers</a>
+                </li>
+                
+              </ul>
+            </div>
+          </div>
+        </div>
+      </nav>
+	  
+	  <br>
+	  <br>
 
 
-	 <table>
+	 <table class="table table-striped table-hover table-bordered">
 		<thead>
 			
 			<tr>
@@ -73,12 +80,17 @@
 		}
 	?>
 		
-	
-
-
 	 </table>
 
 	 <a href="index.php">Add Customer</a>
+
+
+
+
+
+
+
+	 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 	
 </body>
 </html>
