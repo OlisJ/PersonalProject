@@ -82,7 +82,7 @@
 		
 	 </table>
 
-	 <a href="index.php">Add Customer</a>
+	 <a href="new.php">Add Customer</a>
 
 
 

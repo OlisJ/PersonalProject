@@ -11,18 +11,17 @@
 		
 
 
-			$sql = "INSERT INTO customer(name,mobile,email) VALUES  :name, :mobile, :email)";
+			$sql = "INSERT INTO customer(name,mobile,email) VALUES (:name, :mobile, :email)";
 
-			$insertSql = $pdo->prepare($sql);
-
+			$insertsql = $pdo->prepare($sql);
 			
-			$insertSql->bindParam(':name', $name);
-			$insertSql->bindParam(':mobile', $mobile);
-			$insertSql->bindParam(':email', $email);
+			$insertsql->bindParam(':name',$name);
+			$insertsql->bindParam(':mobile',$mobile);
+			$insertsql->bindParam(':email',$email);
 
-			$insertSql->execute();
+			$insertsql->execute();
 
-			echo "The user has been added successfully";
+			echo "The reservation has been made sucessfully";
 
 			echo "<br>";
 
