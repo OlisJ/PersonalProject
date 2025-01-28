@@ -1,45 +1,58 @@
+
+<?php include 'config.php'; ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="UTF-8">
-	<title>Document</title>
-	<link rel="stylesheet" href="	https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
-	<link rel="stylesheet" href="bootstrap.css">
-	<link rel="stylesheet" href="main.css">
-	<style>
-
-		form>input {
-		    margin-bottom: 10px;
-		    font-size: 20px;
-		    padding: 5px;
-		}
-
-		button {
-		    background: none;
-		    border: none;
-		    border: 1px solid black;
-		    padding: 10px 40px;
-		    font-size: 20px;
-		    cursor: pointer;
-			margin-left:25%;
-		}
-	</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
-	
-	<form class='form-signin' action="add.php" method="POST">
-		<div class='mb-3'>
-			<h1 class='h3 mb-3 font-weight-normal mb-6'>Sign In</h1>
-		<input class="form-control sr=only" type="text" name="name" placeholder="Name"><br>
-		<input class="form-control sr=only" type="number" name="mobile" placeholder="Mobile"><br>
-        <input class="form-control sr=only" type="email" name="email" placeholder="Email"><br><br>
-		<button type="submit" name="submit" class="btn btn-primary">Sign In</button>
-		</div>
-        <p>Dont have an account? <a href="signup.php">Sign up</a></p>
-	</form>
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="card shadow">
+                    <div class="card-body">
+                        <h2 class="text-center">Login</h2>
+                        <?php
+						
+                        if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+                            $email = $_POST['email'];
+                            $password = $_POST['password'];
 
+                            
+                            $stmt = $pdo->prepare("SELECT * FROM users WHERE email = ?");
+                            $stmt->bindParam('s', $email);
+                            $stmt->execute();
+                            $result = $stmt->get_result();
+                            $user = $result->fetch_assoc();
 
-
-	<script src='https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js'></script>
+                            if ($user && password_verify($password, $user['password'])) {
+                                $_SESSION['user_id'] = $user['id'];
+                                $_SESSION['role'] = $user['role'];
+                                echo "<div class='alert alert-success'>Login successful! <a href='reservation.php'>Make your reservation</a>.</div>";
+                            } else {
+                                echo "<div class='alert alert-danger'>Invalid email or password.</div>";
+                            }
+                        }
+                        ?>
+                        <form method="POST">
+                            <div class="mb-3">
+                                <label for="email" class="form-label">Email</label>
+                                <input type="email" name="email" id="email" class="form-control" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="password" class="form-label">Password</label>
+                                <input type="password" name="password" id="password" class="form-control" required>
+                            </div>
+                            <button type="submit" class="btn btn-primary w-100">Login</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -26,15 +27,31 @@
 	</style>
 </head>
 <body>
-	
+<?php
+  if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    $name = $_POST['name'];
+    $email = $_POST['email'];
+    $password = password_hash($_POST['password'], PASSWORD_BCRYPT);
+	$stmt = $conn->prepare($sql);
+    $sql = "INSERT INTO users (name, email, password) VALUES (?, ?, ?)";                           
+    $stmt->bind_param('sss', $name, $email, $password);
+
+     if ($stmt->execute()) {
+    	echo "<div class='alert alert-success'>Registration successful! <a href='signin.php'>Sign in here</a>.</div>";
+        } else {
+          echo "<div class='alert alert-danger'>Error: " . $stmt->error . "</div>";    
+		     }
+         }
+             ?>
 	<form class='form-signin' action="add.php" method="POST">
 		<div class='mb-3'>
-			<h1 class='h3 mb-3 font-weight-normal mb-6'>Add a new reservation</h1>
+			<h1 class='h3 mb-3 font-weight-normal mb-6'>Sign Up</h1>
 		<input class="form-control sr=only" type="text" name="name" placeholder="Name"><br>
-		<input class="form-control sr=only" type="number" name="mobile" placeholder="Mobile"><br>
-        <input class="form-control sr=only" type="email" name="email" placeholder="Email"><br><br>
-		<button type="submit" name="submit" class="btn btn-primary">Add Reservation</button>
+        <input class="form-control sr=only" type="email" name="email" placeholder="Email"><br>
+		<input class="form-control sr=only" type="password" name="password" placeholder="Password"><br><br>
+		<button type="submit" name="submit" class="btn btn-primary">Sign Up</button>
 		</div>
+        <p>Already have an account? <a href="signin.php">Sign In</a></p>
 	</form>
 
 
