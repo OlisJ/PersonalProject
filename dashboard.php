@@ -4,7 +4,14 @@
 	<meta charset="UTF-8">
 	<title>Document</title>
 	<link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css'>
-	
+	<link rel="stylesheet" href="bootstrap.css">
+
+	<style>
+		#addcust{
+			text-decoration:none;
+			color:white;
+		}
+	</style>
 </head>
 <body>
 
@@ -82,7 +89,7 @@
 		
 	 </table>
 
-	 <a href="new.php">Add Customer</a>
+	 <button class='btn btn-primary'><a id='addcust' href="new.php">Add Customer</a></button>
 
 
 

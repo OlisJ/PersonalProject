@@ -56,3 +56,43 @@
     left: 55%;
     border: 3px solid lightslategrey;
 }
+
+
+.pt3p{
+    width: 650px;
+    position: relative;
+    top: 10%;
+    margin-left: 950px;
+    font-size: 30px;
+    font-weight: 400;
+    margin-top: 40px;
+}
+
+.pt3img{
+    position: absolute;
+    top: 28%;
+    left: 2%;
+    border: 3px solid lightslategrey;
+    width: 800px;
+}
+
+.pt3txt{
+    margin-left:1045px;
+    position: relative;
+    top: 15%;
+    padding: 30px;
+}
+
+.pt3{
+    height: 100vh;
+    background-color: #FFFFF0;
+    position: relative;
+} 
+
+
+.icon2{
+    position: relative;
+    left: 68%;
+    top: 15%;
+    width: 100px;
+}

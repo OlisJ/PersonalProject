@@ -29,12 +29,13 @@
 	
 	<form class='form-signin' action="add.php" method="POST">
 		<div class='mb-3'>
-			<h1 class='h3 mb-3 font-weight-normal mb-6'>Add a new reservation</h1>
+			<h1 class='h3 mb-3 font-weight-normal mb-6'>Sign In</h1>
 		<input class="form-control sr=only" type="text" name="name" placeholder="Name"><br>
 		<input class="form-control sr=only" type="number" name="mobile" placeholder="Mobile"><br>
         <input class="form-control sr=only" type="email" name="email" placeholder="Email"><br><br>
-		<button type="submit" name="submit" class="btn btn-primary">Add Reservation</button>
+		<button type="submit" name="submit" class="btn btn-primary">Sign In</button>
 		</div>
+        <p>Dont have an account? <a href="signup.php">Sign up</a></p>
 	</form>
 
 
