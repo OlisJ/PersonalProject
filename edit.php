@@ -54,6 +54,8 @@ $data = $prep->fetch();
     <input class="form-control sr=only" type="text" name="name" value="<?php echo $data['name']?>"><br>
     <input class="form-control sr=only" type="text" name="mobile" value="<?php echo $data['mobile']?>"><br>
     <input class="form-control sr=only" type="email" name="email" value="<?php echo $data['email']?>"><br>
+	<input class="form-control sr=only" type="number" name="credit" value="<?php echo $data['credit']?>"><br>
+	<input class="form-control sr=only" type="date" name="date" value="<?php echo $data['date']?>"><br>
 
 		<br><br>
 		<button type="submit" name="update" class="btn btn-primary" >UPDATE</button>

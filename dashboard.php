@@ -65,6 +65,8 @@
 				<th>Name</th>
 				<th>Mobile</th>
 				<th>Email</th>
+				<th>Credit Card</th>
+				<th>Date</th>
 				<th>Update</th>
 			</tr>
 	</thead>
@@ -80,6 +82,8 @@
 				<td> <?= $user['name']  ?> </td> 
 				<td> <?= $user['mobile']  ?> </td> 
 				<td> <?= $user['email']  ?> </td>
+				<td> <?= $user['credit']  ?> </td>
+				<td> <?= $user['date']  ?> </td>
 				<td> <?= "<a href='delete.php?id=$user[id]'> Delete</a>| <a href='edit.php?id=$user[id]'> Update </a>"?></td>
 
 			</tr>
@@ -89,7 +93,7 @@
 		
 	 </table>
 
-	 <button class='btn btn-primary'><a id='addcust' href="new.php">Add Customer</a></button>
+	
 
 
 
