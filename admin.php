@@ -1,4 +1,3 @@
-
 <?php include 'config.php'; ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -14,7 +13,7 @@
             <div class="col-md-6">
                 <div class="card shadow">
                     <div class="card-body">
-                        <h2 class="text-center">Login</h2>
+                        <h2 class="text-center">Admin Login</h2>
                         <?php
 						
                         if ($_SERVER['REQUEST_METHOD'] == 'POST') {
@@ -22,15 +21,15 @@
                             $password = $_POST['password'];
 
                             
-                            $stmt = $pdo->prepare("SELECT * FROM users WHERE email = :email");
+                            $stmt = $pdo->prepare("SELECT * FROM admin WHERE email = :email");
                             $stmt->bindParam(':email', $email);
                             $stmt->execute();
                             $user = $stmt->fetch(PDO::FETCH_ASSOC);
                             
 
                             if ($user) {
-                                $_SESSION['user_id'] = $user['id'];
-                                echo "<div class='alert alert-success'>Login successful! <a href='reservation.php'>Make your reservation</a>.</div>";
+                                $_SESSION['admin_id'] = $user['id'];
+                                echo "<div class='alert alert-success'>Login successful! <a href='team.html'>Check in on managment</a>.</div>";
                             } else {
                                 echo "<div class='alert alert-danger'>Invalid email or password.</div>";
                             }
@@ -45,7 +44,7 @@
                                 <label for="password" class="form-label">Password</label>
                                 <input type="password" name="password" id="password" class="form-control" required>
                             </div>
-                            <button type="submit" class="btn btn-primary w-100">Login</button>
+                            <button type="submit" class="btn btn-primary w-100">Login As Admin</button>
                         </form>
                     </div>
                 </div>

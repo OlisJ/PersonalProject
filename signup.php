@@ -23,21 +23,22 @@
 		    cursor: pointer;
 			margin-left:25%;
 		}
+		p{
+			margin-left:25px
+		}
 	</style>
 </head>
 <body>
-
-	<form class='form-signin' action="cust.php" method="POST">
+	
+	<form class='form-signin' action="add.php" method="POST">
 		<div class='mb-3'>
-			<h1 class='h3 mb-3 font-weight-normal mb-6'>Please Fill out this form</h1>
+			<h1 class='h3 mb-3 font-weight-normal mb-6'>Sign Up</h1>
 		<input class="form-control sr=only" type="text" name="name" placeholder="Name" required><br>
-        <input type="number" class="form-control sr=only" name="mobile" placeholder="mobile" required><br>
-        <input class="form-control sr=only" type="email" name="email" placeholder="Email" required><br>
-		<input class="form-control sr=only" type="number" name="credit" placeholder="Credit card" required><br>
-        <input type="date" class="form-control sr=only" name="date"  placeholder="Your desired date" required><br><br>
-		<button type="submit" name="submit" class="btn btn-primary">Make the Reservation</button>
+		<input class="form-control sr=only" type="number" name="mobile" placeholder="Mobile" required><br>
+        <input class="form-control sr=only" type="email" name="email" placeholder="Email" required><br><br>
+		<button type="submit" name="submit" class="btn btn-primary">Sign Up</button>
 		</div>
-        <p>Go back <a href="index.html">Home</a></p>
+        <p>Already have an account? <a href="signin.php">Sign In</a></p>
 	</form>
 
 
