@@ -21,12 +21,8 @@
 
 			$insertsql->execute();
 
-			echo "Registration has been made succesfully";
-
-			echo "<br>";
-
-			echo "<a href='signin.php'>Log In</a>";
-
+			header('Location: signin.php');
+			exit;
 	}
 
 

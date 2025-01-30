@@ -35,7 +35,9 @@
 			<h1 class='h3 mb-3 font-weight-normal mb-6'>Sign Up</h1>
 		<input class="form-control sr=only" type="text" name="name" placeholder="Name" required><br>
 		<input class="form-control sr=only" type="number" name="mobile" placeholder="Mobile" required><br>
-        <input class="form-control sr=only" type="email" name="email" placeholder="Email" required><br><br>
+        <input class="form-control sr=only" type="email" name="email" placeholder="Email" required><br>
+		<input type="password" class='form-control sr=only' name='password' placeholder='Password' required><br><br>
+
 		<button type="submit" name="submit" class="btn btn-primary">Sign Up</button>
 		</div>
         <p>Already have an account? <a href="signin.php">Sign In</a></p>
